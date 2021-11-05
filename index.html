@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Clone</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section>
+      <aside>
+        <div class="logo">
+          <img src="./img/Spotify-symbol.jpg" alt="" />
+        </div>
+        <ul class="menu">
+          <li class="menu-item"><i class="bx bx-home"></i><span>home</span></li>
+          <li class="menu-item">
+            <i class="bx bx-search"></i><span>search</span>
+          </li>
+          <li class="menu-item">
+            <i class="bx bx-library"></i><span>your library</span>
+          </li>
+        </ul>
+
+        <ul class="menu">
+          <li class="menu-item">
+            <i class="bx bx-plus"></i><span>create playlist</span>
+          </li>
+          <li class="menu-item">
+            <i class="bx bx-heart"></i><span>liked son</span>
+          </li>
+          <li class="menu-item">
+            <i class="bx bx-podcast"></i><span>your episodes</span>
+          </li>
+        </ul>
+      </aside>
+      <main>
+        <header class="header">
+          <div class="search-box">
+            <input
+              type="search"
+              placeholder="Search artists, songs, or podcasts"
+              name=""
+              id=""
+            />
+            <i class="bx bx-search"></i>
+          </div>
+
+          <ul class="options">
+            <li class="option-item">
+              <i class="bx bx-bell"></i>
+            </li>
+            <li class="option-item">
+              <i class="bx bxs-user"></i>
+            </li>
+          </ul>
+        </header>
+        <div class="container">
+          <div class="main-carousel"></div>
+          <div class="feature">
+            <div class="feature-title">
+              <h5>featured</h5>
+              <span>see all</span>
+            </div>
+            <ul class="featured-list">
+              <li class="featured-item">
+                <img src="https://picsum.photos/200?random=1" alt="" />
+                <h6>featured title</h6>
+                <span>artist name</span>
+              </li>
+              <li class="featured-item">
+                <img src="https://picsum.photos/200?random=1" alt="" />
+                <h6>featured title</h6>
+                <span>artist name</span>
+              </li>
+              <li class="featured-item">
+                <img src="https://picsum.photos/200?random=1" alt="" />
+                <h6>featured title</h6>
+                <span>artist name</span>
+              </li>
+              <li class="featured-item">
+                <img src="https://picsum.photos/200?random=1" alt="" />
+                <h6>featured title</h6>
+                <span>artist name</span>
+              </li>
+              <li class="featured-item">
+                <img src="https://picsum.photos/200?random=1" alt="" />
+                <h6>featured title</h6>
+                <span>artist name</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature">
+            <div class="feature-title">
+              <h5>most popular</h5>
+              <span>see all</span>
+            </div>
+            <ul class="featured-list">
+              <li class="featured-item">
+                <img src="https://picsum.photos/200?random=1" alt="" />
+                <h6>featured title</h6>
+                <span>artist name</span>
+              </li>
+              <li class="featured-item">
+                <img src="https://picsum.photos/200?random=1" alt="" />
+                <h6>featured title</h6>
+                <span>artist name</span>
+              </li>
+              <li class="featured-item">
+                <img src="https://picsum.photos/200?random=1" alt="" />
+                <h6>featured title</h6>
+                <span>artist name</span>
+              </li>
+              <li class="featured-item">
+                <img src="https://picsum.photos/200?random=1" alt="" />
+                <h6>featured title</h6>
+                <span>artist name</span>
+              </li>
+              <li class="featured-item">
+                <img src="https://picsum.photos/200?random=1" alt="" />
+                <h6>featured title</h6>
+                <span>artist name</span>
+              </li>
+            </ul>
+          </div>
+          <div class="feature">
+            <div class="feature-title">
+              <h5>recently played</h5>
+              <span>see all</span>
+            </div>
+            <ul class="featured-list">
+              <li class="featured-item">
+                <img src="https://picsum.photos/200?random=1" alt="" />
+                <h6>featured title</h6>
+                <span>artist name</span>
+              </li>
+              <li class="featured-item">
+                <img src="https://picsum.photos/200?random=1" alt="" />
+                <h6>featured title</h6>
+                <span>artist name</span>
+              </li>
+              <li class="featured-item">
+                <img src="https://picsum.photos/200?random=1" alt="" />
+                <h6>featured title</h6>
+                <span>artist name</span>
+              </li>
+              <li class="featured-item">
+                <img src="https://picsum.photos/200?random=1" alt="" />
+                <h6>featured title</h6>
+                <span>artist name</span>
+              </li>
+              <li class="featured-item">
+                <img src="https://picsum.photos/200?random=1" alt="" />
+                <h6>featured title</h6>
+                <span>artist name</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
+
+      <div class="player">
+        <div class="play-card">
+          <img src="https://picsum.photos/165" alt="" />
+          <div class="song">
+            <p>song name jbbh ugu gy ug bjhbjb</p>
+            <span>artist name</span>
+          </div>
+          <div class="like">
+            <i class="bx bxs-heart"></i>
+            <i class="bx bx-exit-fullscreen"></i>
+          </div>
+        </div>
+        <div class="play-progress">
+          <div class="play-options">
+            <div class="option">
+              <i class="bx bx-shuffle"></i>
+            </div>
+            <div class="option">
+              <i class="bx bx-skip-previous"></i>
+            </div>
+            <div class="option play">
+              <i class="bx bx-play-circle"></i>
+            </div>
+            <div class="option play">
+              <i class="bx bx-pause-circle"></i>
+            </div>
+            <div class="option">
+              <i class="bx bx-skip-next"></i>
+            </div>
+            <div class="option">
+              <i class="bx bx-repeat"></i>
+            </div>
+          </div>
+          <div class="progress-container">
+            <div class="progress"></div>
+          </div>
+        </div>
+        <div class="play-extras">
+          <div class="extra"></div>
+          <div class="extra"><i class="bx bxs-playlist"></i></div>
+          <div class="extra"></div>
+          <div class="extra">
+            <i class="bx bx-volume-full"></i>
+            <div class="progress-container"><div class="progress"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+  </body>
+</html>
