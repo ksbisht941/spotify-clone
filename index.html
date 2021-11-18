@@ -9,13 +9,13 @@
       rel="stylesheet"
       href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
     <section>
       <aside>
         <div class="logo">
-          <img src="./img/Spotify-symbol.jpg" alt="" />
+          <img src="./assets/images/Spotify-symbol.jpg" alt="" />
         </div>
         <ul class="menu">
           <li class="menu-item"><i class="bx bx-home"></i><span>home</span></li>
@@ -67,9 +67,10 @@
               <h5>featured</h5>
               <span>see all</span>
             </div>
-            <ul class="featured-list">
+            <ul class="featured-list" id="featured">
               <li class="featured-item">
                 <img src="https://picsum.photos/200?random=1" alt="" />
+                <div class="playSong"><i class='bx bx-play'></i></div>
                 <h6>featured title</h6>
                 <span>artist name</span>
               </li>
@@ -97,10 +98,10 @@
           </div>
           <div class="feature">
             <div class="feature-title">
-              <h5>most popular</h5>
+              <h5>top artist</h5>
               <span>see all</span>
             </div>
-            <ul class="featured-list">
+            <ul class="featured-list" id="top-artist">
               <li class="featured-item">
                 <img src="https://picsum.photos/200?random=1" alt="" />
                 <h6>featured title</h6>
@@ -133,7 +134,7 @@
               <h5>recently played</h5>
               <span>see all</span>
             </div>
-            <ul class="featured-list">
+            <ul class="featured-list" id="recently-played">
               <li class="featured-item">
                 <img src="https://picsum.photos/200?random=1" alt="" />
                 <h6>featured title</h6>
@@ -214,5 +215,7 @@
     </section>
 
     <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+    <script src="./assets/js/script.js"></script>
+
   </body>
 </html>
