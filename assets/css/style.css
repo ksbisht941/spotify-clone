@@ -77,7 +77,8 @@ aside ul.menu li.menu-item {
     align-items: center;
 }
 
-aside ul.menu li.menu-item:hover {
+aside ul.menu li.menu-item:hover,
+aside ul.menu li.menu-item.active {
     border-left: 5px solid var(--success-green-color);
 }
 
@@ -91,7 +92,8 @@ aside ul.menu li.menu-item::before {
     z-index: -1;
 }
 
-aside ul.menu li.menu-item:hover::before {
+aside ul.menu li.menu-item:hover::before,
+aside ul.menu li.menu-item.active::before {
     background-image: linear-gradient(to right, rgba(95, 177, 104, .3) 5%, transparent 100%);
 }
 
@@ -194,6 +196,7 @@ main .container .main-carousel .feature-box {
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     position: absolute;
+    cursor: pointer;
 }
 
 main .container .main-carousel .feature-box:nth-child(1) {
