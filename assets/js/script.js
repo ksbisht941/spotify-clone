@@ -1,72 +1,87 @@
-const featuredListArr = [
-    {
-        track: 'Fearless PT. II',
-        artist: 'Lost Sky, Chris Linton'
-    },
-    {
-        track: 'Punya Paap',
-        artist: 'DIVINE'
-    },
-    {
-        track: 'Satisfya',
-        artist: 'Imran Khan'
-    },
-    {
-        track: 'Brown Munde',
-        artist: 'Invisible'
-    },
-]
+'use strict';
 
-const topArtistArr = [
-    {
-        artist: 'B Praak',
-        description: 'This is B Praak. The essential tracks, all in one playlist'
-    },
-    {
-        artist: 'Jubin Nautiyal',
-        description: 'This is Jubin Nautiyal. The essential tracks, all in one playlist'
-    },
-    {
-        artist: 'Neha Kakkar',
-        description: 'This is Neha Kakkar. The essential tracks, all in one playlist'
-    },
-    {
-        artist: 'Arijit Singh',
-        description: 'This is Arijit Singh. The essential tracks, all in one playlist'
-    },
-]
+const playlist = document.querySelectorAll('.featured-list .featured-item');
+const playerContainer = document.getElementById('player-container');
+const mainContainer = document.getElementById('main-container');
+const progressContainer = document.getElementById('progress-container');
+const playBtn = document.getElementById('playBtn');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const songTitle = document.getElementById('song-title');
 
-const recentlyPlayedArr = [
-    {
-        track: 'Fearless PT. II',
-        artist: 'Lost Sky, Chris Linton'
-    },
-    {
-        track: 'Sufi/Lofi',
-        artist: 'Vishal Singh'
-    },
-    {
-        track: 'B Praak',
-        artist: 'This is B Praak. The essential tracks, all in one playlist'
-    },
-    {
-        track: 'Unbreakable',
-        artist: 'Madison Beer'
-    },
-]
+const progress = progressContainer.querySelector('.progress');
 
-const featured = document.querySelectorAll('#featured .featured-item');
-const topArtist = document.getElementById('top-artist');
-const recentlyPlayed = document.getElementById('recently-played');
+console.log(progress);
 
-console.log(featured);
+let audio;
+playlist.forEach(el => {
+    const player = el.querySelector('.playSong');
+    const icon = el.querySelector('.playSong i');
+    player.addEventListener('click', () => {
+        audio = player.querySelector('audio');
+        
+        if (icon.classList.contains('bx-play')) {
+            audio.play();
+            icon.classList.add('bx-pause');
+            icon.classList.remove('bx-play');
+            playerContainer.querySelector('img').style.animationPlayState = 'running';
+            
+            playBtn.querySelector('.bx').classList.remove('bx-play-circle');
+            playBtn.querySelector('.bx').classList.add('bx-pause-circle');
+            audio.addEventListener('timeupdate', updateProgress);
+        } else {
+            audio.pause();
+            icon.classList.remove('bx-pause');
+            icon.classList.add('bx-play');
+            playBtn.querySelector('.bx').classList.add('bx-play-circle');
+            playBtn.querySelector('.bx').classList.remove('bx-pause-circle');
+            playerContainer.querySelector('img').style.animationPlayState = 'paused';
+        }
 
-featured.forEach((el, idx) => {
-    // document.querySelector('el img').src = `${featuredListArr[idx].track}.jpg`
-    el.innerHTML = `
-    <img src="https://picsum.photos/200?random=1" alt="" />
-    <div class="playSong"><i class='bx bx-play'></i></div>
-    <h6>featured title</h6>
-    <span>artist name</span>
-    `
-})
+        playerContainer.classList.add('active-container');
+        mainContainer.style.marginBottom = '100px';
+    });
+});
+
+// Pause song
+function pauseSong() {
+    playBtn.querySelector('i.bx').classList.add('bx-pause-circle');
+    playBtn.querySelector('i.bx').classList.remove('bx-play-circle');
+    
+    playerContainer.querySelector('img').style.animationPlayState = 'paused';
+    audio.pause();
+}
+
+// Play song
+function playSong() {
+    playBtn.querySelector('i.bx').classList.remove('bx-pause-circle');
+    playBtn.querySelector('i.bx').classList.add('bx-play-circle');
+
+    playerContainer.querySelector('img').style.animationPlayState = 'running';
+    audio.play();
+}
+
+// Update Progress
+function updateProgress(e) {
+    const {duration, currentTime} = e.srcElement;
+    const progressPercent = (currentTime / duration) * 100;
+    progress.style.width = `${progressPercent}%`;
+}
+
+// Set Progress
+function setProgress(e) {
+    console.log(e);
+    const width = this.clientWidth;
+    const clientX = e.offsetX;
+    const duration = audio.duration;
+    audio.currentTime = (clientX / width) * duration;
+}
+
+// Click on progress bar
+progressContainer.addEventListener('click', setProgress);
+
+// Event listeners
+playBtn.addEventListener('click', () => {
+    console.log(audio.paused);
+    audio.paused ? playSong() : pauseSong();
+});
